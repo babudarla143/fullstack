@@ -18,18 +18,18 @@ jobs:
     - name: 🔐 Login to DockerHub
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        username: ${{ haribabud }}
+        password: ${{ dckr_pat_zjPKGf6RsUGcSV_F-1O9YDhEBfA }}
 
     - name: 🛠️ Build & Push Frontend Image
       run: |
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/pest-frontend:latest ./Pest-Guard-frontend
-        #docker push ${{ secrets.DOCKERHUB_USERNAME }}/pest-frontend:latest
+        docker build -t ${{ haribabud }}/pest-frontend:latest ./Pest-Guard-frontend
+        #docker push ${{ dckr_pat_zjPKGf6RsUGcSV_F-1O9YDhEBfA }}/pest-frontend:latest
 
     - name: 🛠️ Build & Push Backend Image
       run: |
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/pest-backend:latest ./Pest-Guard-backend
-        #docker push ${{ secrets.DOCKERHUB_USERNAME }}/pest-backend:latest
+        docker build -t ${{ haribabud }}/pest-backend:latest ./Pest-Guard-backend
+        #docker push ${{ dckr_pat_zjPKGf6RsUGcSV_F-1O9YDhEBfA }}/pest-backend:latest
 
     - name: ☸️ Set up kubectl
       uses: azure/setup-kubectl@v3
